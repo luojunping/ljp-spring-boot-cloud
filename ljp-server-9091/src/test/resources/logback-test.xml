@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property resource="application.properties" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>#${spring.application.name}# %d{yyyy-MM-dd HH:mm:ss.SSS} %t %-5p %c{50} %L - %m%n%xEx{full, EX_DISPLAY_EVAL}</pattern>
+        </encoder>
+    </appender>
+    <!--<appender name="ELK_OUT" class="">
+
+    </appender>-->
+    <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logging.file.path}/${spring.application.name}/%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>180</maxHistory>
+            <maxFileSize>100mb</maxFileSize>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %t %-5p %c{50} %L - %m%n%ex{full, EX_DISPLAY_EVAL}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE_OUT" />
+        <!--<appender-ref ref="ELK_OUT" />-->
+    </root>
+</configuration>

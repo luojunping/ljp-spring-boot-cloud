@@ -1,0 +1,11 @@
+# Project exclude paths
+/ljp-client-9081/target/
+/ljp-client-9082/target/
+/ljp-common/target/
+/ljp-eureka-server-9001/target/
+/ljp-eureka-server-9002/target/
+/ljp-eureka-server-9003/target/
+/ljp-gateway-9009/target/
+/ljp-quartz-9006/target/
+/ljp-server-9091/target/
+/ljp-server-9092/target/
