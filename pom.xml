@@ -21,83 +21,22 @@
 
     <modules>
         <module>ljp-client-9081</module>
-        <module>ljp-client-9082</module>
+        <module>ljp-common</module>
         <module>ljp-eureka-server-9001</module>
         <module>ljp-eureka-server-9002</module>
         <module>ljp-eureka-server-9003</module>
+        <module>ljp-gateway-9009</module>
+        <module>ljp-quartz-9006</module>
         <module>ljp-server-9091</module>
         <module>ljp-server-9092</module>
-        <module>ljp-gateway-9009</module>
-        <module>ljp-common</module>
-        <module>ljp-quartz-9006</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
-        <jackson.version>2.12.0</jackson.version>
-        <guava.version>30.1-jre</guava.version>
-        <commons-lang3.version>3.11</commons-lang3.version>
-        <java-jwt.version>3.12.0</java-jwt.version>
-        <mybatis-plus.version>3.4.1</mybatis-plus.version>
-        <druid.version>1.2.4</druid.version>
-        <shardingsphere.version>4.1.1</shardingsphere.version>
-        <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
+        <spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.ljp</groupId>
-            <artifactId>ljp-common</artifactId>
-            <version>${project.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>test</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>${java-jwt.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -124,31 +63,27 @@
             </dependency>
 
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>${mybatis-plus.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.shardingsphere</groupId>
-                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-                <version>${shardingsphere.version}</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.logstash.logback</groupId>
-                <artifactId>logstash-logback-encoder</artifactId>
-                <version>${logstash-logback-encoder.version}</version>
+                <groupId>com.ljp</groupId>
+                <artifactId>ljp-common</artifactId>
+                <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>test</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <finalName>ljp-spring-boot-cloud</finalName>

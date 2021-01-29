@@ -9,3 +9,15 @@
 /ljp-quartz-9006/target/
 /ljp-server-9091/target/
 /ljp-server-9092/target/
+.idea/
+ljp-client-9081/ljp-client-9081.iml
+ljp-client-9082/ljp-client-9082.iml
+ljp-common/ljp-common.iml
+ljp-eureka-server-9001/ljp-eureka-server-9001.iml
+ljp-eureka-server-9002/ljp-eureka-server-9002.iml
+ljp-eureka-server-9003/ljp-eureka-server-9003.iml
+ljp-gateway-9009/ljp-gateway-9009.iml
+ljp-quartz-9006/ljp-quartz-9006.iml
+ljp-server-9091/ljp-server-9091.iml
+ljp-server-9092/ljp-server-9092.iml
+ljp-spring-boot-cloud.iml
