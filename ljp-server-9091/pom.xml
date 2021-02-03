@@ -17,6 +17,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <curator.version>5.1.0</curator.version>
     </properties>
 
     <dependencies>
@@ -59,11 +60,21 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper</artifactId>
+        </dependency>
         <!--Spring Cloud-->
         <!--Others-->
         <dependency>
             <groupId>com.ljp</groupId>
             <artifactId>ljp-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
+            <scope>compile</scope>
         </dependency>
         <!--Others-->
     </dependencies>
