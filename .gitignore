@@ -10,6 +10,7 @@
 /ljp-server-9091/target/
 /ljp-server-9092/target/
 .idea/
+.gradle/
 ljp-client-9081/ljp-client-9081.iml
 ljp-client-9082/ljp-client-9082.iml
 ljp-common/ljp-common.iml
