@@ -1,6 +1,11 @@
 package com.ljp.test.log;
 
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 @Slf4j
 public class LogbackTest {
@@ -35,6 +40,15 @@ public class LogbackTest {
 			default:
 				System.out.println("default");
 		}
+	}
+
+	@Test
+	public void testOne() {
+		DecimalFormat decimalFormat = new DecimalFormat("#.##");
+		ArrayList<Float> arrayList = Lists.newArrayList(1.9F, 2.5F, 3.5F, 4.5F);
+		double result = arrayList.stream().mapToDouble(score -> score.doubleValue()).average().getAsDouble();
+		System.out.println("result = " + result);
+		System.out.println("result = " + decimalFormat.format(result));
 	}
 
 }

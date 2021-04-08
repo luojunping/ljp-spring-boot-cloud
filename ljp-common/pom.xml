@@ -20,8 +20,6 @@
         <shardingsphere.version>4.1.1</shardingsphere.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <druid.version>1.2.5</druid.version>
-        <commons-codec.version>1.15</commons-codec.version>
-        <java-jwt.version>3.12.1</java-jwt.version>
         <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
     </properties>
 
@@ -43,12 +41,12 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
             <version>${shardingsphere.version}</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
@@ -67,16 +65,8 @@
         </dependency>
 
         <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.auth0</groupId>
             <artifactId>java-jwt</artifactId>
-            <version>${java-jwt.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -84,4 +84,12 @@ public class TestTestController {
 		return "TestTestController.deleteSession() : " + serverPort;
 	}
 
+	@GetMapping("/test/hello")
+	public String hello(HttpServletRequest request, HttpServletResponse response) {
+		String name = request.getParameter("name");
+		log.info("hello------------------------{}", name);
+		log.error("hello------------------------{}", name);
+		return "hello : " + name;
+	}
+
 }

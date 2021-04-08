@@ -8,10 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StreamTest {
@@ -107,6 +104,39 @@ public class StreamTest {
 		assert user.getRole() == uuu.getRole();
 		assert user == uuu;
 		System.out.println("new Random().nextInt() = " + new Random().nextInt(10));
+	}
+
+	@Test
+	public void testFour() {
+		Role role = new Role();
+		role.setRolename("admin");
+		User user = new User();
+		user.setUsername("admin");
+		user.setRole(role);
+		User uuu = new User();
+		BeanUtils.copyProperties(user, uuu);
+		System.out.println("uuu = " + uuu);
+		System.out.println(user.getRole() == uuu.getRole());
+		user.setUsername("zhangsan");
+		System.out.println("uuu = " + uuu);
+		System.out.println("user = " + user);
+	}
+
+	@Test
+	public void testFive() {
+		System.out.println("1".hashCode());
+		System.out.println("2".hashCode());
+		System.out.println("3".hashCode());
+	}
+
+	@Test
+	public void testSix() {
+		List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5);
+		String result = integerList.stream().map(integer -> integer.toString()).collect(Collectors.joining("', '", "'", "'"));
+		System.out.println("result = " + result);
+		List<String> strList = Arrays.asList("1", "2", "3", "4", "5");
+		result = strList.stream().collect(Collectors.joining("', '", "'", "'"));
+		System.out.println("result = " + result);
 	}
 
 }

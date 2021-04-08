@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="600 seconds">
-    <property resource="application.properties" />
+    <property resource="application.properties"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>#${spring.application.name}# %d{yyyy-MM-dd HH:mm:ss.SSS} %t %-5p %logger{50} %L - %m%n%ex{full, EX_DISPLAY_EVAL}</pattern>
+            <pattern>%d{MM-dd HH:mm:ss.SSS} %-5p %t %logger{50} %L - %m%n%ex{full, EX_DISPLAY_EVAL}</pattern>
         </encoder>
     </appender>
     <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -15,12 +15,12 @@
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %t %-5p %logger{50} %L - %m%n%xEx{full, EX_DISPLAY_EVAL}</pattern>
+            <pattern>%d{MM-dd HH:mm:ss.SSS} %-5p %t %logger{50} %L - %m%n%xEx{full, EX_DISPLAY_EVAL}</pattern>
         </encoder>
     </appender>
 
     <root level="ERROR">
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILE_OUT" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE_OUT"/>
     </root>
 </configuration>
