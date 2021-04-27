@@ -1,7 +1,7 @@
-package com.ljp.test.dao;
+package com.ljp.test.mybatis.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ljp.test.dto.UserDTO;
+import com.ljp.test.mybatis.dto.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

@@ -2,7 +2,7 @@ package com.ljp.test.controller;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.ljp.test.dto.UserDTO;
+import com.ljp.test.mybatis.dto.UserDTO;
 import com.ljp.test.service.TestTestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -35,7 +36,11 @@ public class TestTestController {
 	}
 
 	@GetMapping("/test/testTest")
-	public String testTest() {
+	public String testTest(HttpServletRequest request) throws InterruptedException {
+		String auth = request.getHeader("Auth");
+		System.out.println("auth = " + auth);
+		TimeUnit.SECONDS.sleep(3);
+		System.out.println("auth = " + auth);
 		return "TestTestController.testTest() : " + serverPort;
 	}
 

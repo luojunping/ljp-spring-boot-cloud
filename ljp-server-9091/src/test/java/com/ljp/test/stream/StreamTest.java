@@ -1,9 +1,9 @@
 package com.ljp.test.stream;
 
 import com.google.common.collect.Lists;
-import com.ljp.test.dto.UserDTO;
 import com.ljp.test.entity.Role;
 import com.ljp.test.entity.User;
+import com.ljp.test.mybatis.dto.UserDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeanUtils;

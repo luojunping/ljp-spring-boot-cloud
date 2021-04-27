@@ -51,4 +51,9 @@ public class LogbackTest {
 		System.out.println("result = " + decimalFormat.format(result));
 	}
 
+	@Test
+	public void testTwo() {
+		log.error("当前省份（{}）为非新高考省份，没有相关的覆盖率数据！", "安徽");
+	}
+
 }

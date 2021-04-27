@@ -16,9 +16,8 @@
     <packaging>jar</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
-        <druid.version>1.2.5</druid.version>
-        <poi.version>4.1.2</poi.version>
+        <java.version>11</java.version>
+        <druid.version>1.2.6</druid.version>
     </properties>
 
     <dependencies>
@@ -79,19 +78,10 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>${poi.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
-            <scope>compile</scope>
         </dependency>
         <!--Others-->
         <!--Spring Cloud Alibaba-->

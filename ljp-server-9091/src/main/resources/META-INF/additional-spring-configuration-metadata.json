@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "ribbon.ConnectionTimeout",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.ConnectionTimeout."
+    },
+    {
+      "name": "ribbon.ReadTimeout",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.ReadTimeout."
+    },
+    {
+      "name": "ribbon.MaxAutoRetriesNextServer",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.MaxAutoRetriesNextServer."
+    },
+    {
+      "name": "ribbon.MaxAutoRetries",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.MaxAutoRetries."
+    },
+    {
+      "name": "feign.client.retryer.default.enable",
+      "type": "java.lang.String",
+      "description": "Description for feign.client.retryer.default.enable."
+    }
+  ]
+}

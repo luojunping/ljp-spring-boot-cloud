@@ -54,4 +54,36 @@ public class ActivemqTest {
 		connection.close();
 	}
 
+	@Test
+	public void testThree() throws JMSException {
+		ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory("failover:(tcp://127.0.0.1:61616,tcp://10.40.139.214:61616)?randomize=false");
+		Connection connection = activeMQConnectionFactory.createConnection();
+		connection.start();
+		Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
+		Queue evenQueue = session.createQueue("my-queue-even");
+		Queue oddQueue = session.createQueue("my-queue-odd");
+		MessageProducer messageProducer = session.createProducer(session.createQueue("my-queue"));
+		try {
+			for (int i = 0; i < 100; i++) {
+//				if (i == 50) {
+//					throw new IllegalArgumentException("illegal argument exception !!!");
+//				}
+				if (i % 2 == 0) {
+					messageProducer.send(session.createTextMessage("even number : " + i));
+				} else {
+					messageProducer.send(session.createTextMessage("odd number : " + i));
+				}
+			}
+			session.commit();
+		} catch (Exception e) {
+			session.rollback();
+			e.printStackTrace();
+			System.out.println("illegal argument exception !!!");
+		} finally {
+			messageProducer.close();
+			session.close();
+			connection.close();
+		}
+	}
+
 }
