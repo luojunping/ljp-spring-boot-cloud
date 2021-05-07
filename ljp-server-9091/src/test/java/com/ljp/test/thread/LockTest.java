@@ -1,5 +1,7 @@
 package com.ljp.test.thread;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -41,6 +43,27 @@ public class LockTest {
 				lock.unlock();
 			}
 		}).start();
+	}
+
+	@Test
+	public void testOne() {
+		Thread t1 = new Thread(() -> {
+			for (; ; ) {
+				System.out.println("-------------------------");
+				try {
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}, "t1");
+		// t1.setDaemon(true);
+		t1.start();
+		try {
+			TimeUnit.SECONDS.sleep(30);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -54,6 +54,8 @@ public class LogbackTest {
 	@Test
 	public void testTwo() {
 		log.error("当前省份（{}）为非新高考省份，没有相关的覆盖率数据！", "安徽");
+		System.out.println(0x00ff);
+		System.out.println(255 / 15);
 	}
 
 }
