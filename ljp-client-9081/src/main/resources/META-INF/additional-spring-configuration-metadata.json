@@ -1,0 +1,64 @@
+{
+  "properties": [
+    {
+      "name": "spring.datasource.one.url",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.one.url."
+    },
+    {
+      "name": "spring.datasource.one.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.one.username."
+    },
+    {
+      "name": "spring.datasource.one.password",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.one.password."
+    },
+    {
+      "name": "spring.datasource.one.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.one.driver-class-name."
+    },
+    {
+      "name": "spring.datasource.one.type",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.one.type."
+    },
+    {
+      "name": "spring.datasource.two.url",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.two.url."
+    },
+    {
+      "name": "spring.datasource.two.username",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.two.username."
+    },
+    {
+      "name": "spring.datasource.two.password",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.two.password."
+    },
+    {
+      "name": "spring.datasource.two.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.two.driver-class-name."
+    },
+    {
+      "name": "spring.datasource.two.type",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.two.type."
+    },
+    {
+      "name": "ribbon.ConnectTimeout",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.ConnectTimeout."
+    },
+    {
+      "name": "ribbon.ReadTimeout",
+      "type": "java.lang.String",
+      "description": "Description for ribbon.ReadTimeout."
+    }
+  ]
+}

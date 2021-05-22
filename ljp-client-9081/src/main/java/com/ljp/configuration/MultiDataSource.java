@@ -8,20 +8,20 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class MultiDataSource {
 
-    @Primary
-    @Bean("dataSourceOne")
-    @ConfigurationProperties(prefix = "spring.datasource.one")
-    DataSource dataSourceOne() {
-        return DruidDataSourceBuilder.create().build();
-    }
+	@Primary
+	@Bean("dataSourceOne")
+	@ConfigurationProperties(prefix = "spring.datasource.one")
+	DataSource dataSourceOne() {
+		return DruidDataSourceBuilder.create().build();
+	}
 
-    @Bean("dataSourceTwo")
-    @ConfigurationProperties(prefix = "spring.datasource.two")
-    DataSource dataSourceTwo() {
-        return DruidDataSourceBuilder.create().build();
-    }
+	@Bean("dataSourceTwo")
+	@ConfigurationProperties(prefix = "spring.datasource.two")
+	DataSource dataSourceTwo() {
+		return DruidDataSourceBuilder.create().build();
+	}
 
 }

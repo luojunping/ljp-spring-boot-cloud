@@ -85,6 +85,7 @@ public class CuratorTest {
 //		System.out.println("curatorCache.get(\"/test/hello/world\") = " + curatorCache.get("/test/hello/world"));
 		byte[] bytes = curatorFramework.getData().forPath("/test/hello/world/1");
 //		System.out.println(new String(bytes, StandardCharsets.UTF_8));
+
 	}
 
 	@Test
