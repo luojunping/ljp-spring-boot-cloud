@@ -20,11 +20,6 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
             <scope>compile</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -33,6 +28,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.ljp.Gateway9009Application</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

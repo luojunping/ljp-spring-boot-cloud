@@ -4,8 +4,9 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.security.SecureRandom;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
+import java.util.*;
 
 @Slf4j
 public class LogbackTest {
@@ -56,6 +57,59 @@ public class LogbackTest {
 		log.error("当前省份（{}）为非新高考省份，没有相关的覆盖率数据！", "安徽");
 		System.out.println(0x00ff);
 		System.out.println(255 / 15);
+	}
+
+	@Test
+	public void testThree() {
+		SecureRandom secureRandom = new SecureRandom();
+		String[] batchArray = {"本科一批", "本科二批"};
+		String[] schoolYearArray = {"2012", "2013", "2014", "2015", "2016", "2017"};
+		Map<String, Map<String, Integer>> mapp = new HashMap<>();
+		for (int j = 0; j < 12; j++) {
+			Integer avgScore = 600;
+			Integer provinceControlLine = 500;
+			String schoolYear = schoolYearArray[j / 2];
+			String batch = batchArray[secureRandom.nextInt(2)];
+			Map<String, Integer> tempMap = mapp.computeIfAbsent(batch, k -> new LinkedHashMap<>());
+			tempMap.put(schoolYear, avgScore - provinceControlLine);
+		}
+		System.out.println("mapp = " + mapp);
+		if (mapp.size() == 2) {
+			Map<String, Integer> oneMap = mapp.get("本科一批");
+			Map<String, Integer> twoMap = mapp.get("本科二批");
+			Iterator<String> oneIterator = oneMap.keySet().iterator();
+			while (oneIterator.hasNext()) {
+				if (!twoMap.containsKey(oneIterator.next())) {
+					oneIterator.remove();
+				}
+			}
+			Iterator<String> twoIterator = twoMap.keySet().iterator();
+			while (twoIterator.hasNext()) {
+				if (!oneMap.containsKey(twoIterator.next())) {
+					twoIterator.remove();
+				}
+			}
+		}
+		System.out.println("mapp = " + mapp);
+	}
+
+	@Test
+	public void testFour() {
+		int num = 1;
+		System.out.println(++num == 1);
+		System.out.println(num);
+		num = 1;
+		System.out.println((++num) == 1);
+		System.out.println(num);
+		char ss = 'A';
+		System.out.println((int) ss);
+		Byte a = 127;
+		Byte b = 127;
+		System.out.println(a == b);
+		int i = 100;
+		// \u000a System.out.println("Hello World!");
+		i = +2; //注意，加号在后面
+		System.out.println(i);
 	}
 
 }

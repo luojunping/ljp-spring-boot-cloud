@@ -1,5 +1,6 @@
 package com.ljp.test.redis;
 
+import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ScanParams;
 import redis.clients.jedis.ScanResult;
@@ -17,6 +18,17 @@ public class RedisTest {
 		for (String key : keyList) {
 			System.out.println(key);
 		}
+	}
+
+	@Test
+	public void testOne() {
+		Jedis jedis = new Jedis("127.0.0.1", 6379);
+		Long lpushNum = jedis.lpush("redis:message:queue", "0", "1", "2");
+		System.out.println("lpushNum = " + lpushNum);
+		String rpopObj = jedis.rpop("redis:message:queue");
+		System.out.println("rpopObj = " + rpopObj);
+		List<String> redisMessageQueue = jedis.lrange("redis:message:queue", 0, -1);
+		System.out.println("redisMessageQueue = " + redisMessageQueue);
 	}
 
 }

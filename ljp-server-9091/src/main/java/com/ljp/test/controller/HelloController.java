@@ -22,11 +22,11 @@ public class HelloController {
 	@PostMapping("/test/hello/china")
 	public String china(String hello) {
 		System.out.println("-------------------------" + hello);
-		try {
-			TimeUnit.SECONDS.sleep(2);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			TimeUnit.SECONDS.sleep(2);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		return "hello world !!!";
 	}
 

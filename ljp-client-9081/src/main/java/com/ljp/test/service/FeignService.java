@@ -3,6 +3,7 @@ package com.ljp.test.service;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(value = "LJP-SERVER")
 public interface FeignService {
@@ -11,6 +12,6 @@ public interface FeignService {
 	String helloWorld();
 
 	@PostMapping("/ljp-server/test/hello/china")
-	String helloChina(String hello);
+	String helloChina(@RequestParam("hello") String hello);
 
 }

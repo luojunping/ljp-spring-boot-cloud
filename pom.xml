@@ -12,10 +12,12 @@
     <description>ljp-spring-boot-cloud</description>
     <developers>
         <developer>
+            <id>luojunping</id>
             <email>luojunping800@163.com</email>
             <roles>
                 <role>java开发工程师</role>
             </roles>
+            <url>https://github.com/luojunping/ljp-spring-boot-cloud</url>
         </developer>
     </developers>
 
@@ -33,20 +35,28 @@
 
     <properties>
         <java.version>11</java.version>
-        <!--<spring-boot.version>2.4.5</spring-boot.version>-->
-        <!--<spring-cloud.version>2020.0.2</spring-cloud.version>-->
+        <!--<spring-boot.version>2.4.7</spring-boot.version>-->
+        <!--<spring-cloud.version>2020.0.3</spring-cloud.version>-->
         <!--<spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
-        <spring-boot.version>2.3.11.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR11</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
-        <pooled-jms.version>1.2.1</pooled-jms.version>
-        <java-jwt.version>3.15.0</java-jwt.version>
-        <commons-codec.version>1.15</commons-codec.version>
+        <pooled-jms.version>1.2.2</pooled-jms.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
+        <druid.version>1.2.6</druid.version>
+        <shardingsphere.version>4.1.1</shardingsphere.version>
+        <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
+        <elastic.version>7.13.1</elastic.version>
+        <jedis.version>3.6.1</jedis.version>
+        <java-jwt.version>3.16.0</java-jwt.version>
         <fastjson.version>1.2.76</fastjson.version>
         <poi.version>4.1.2</poi.version>
         <guava.version>30.1.1-jre</guava.version>
+        <commons-pool2.version>2.10.0</commons-pool2.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-text.version>1.9</commons-text.version>
+        <commons-codec.version>1.15</commons-codec.version>
         <curator.version>5.1.0</curator.version>
         <zookeeper.version>3.7.0</zookeeper.version>
     </properties>
@@ -74,6 +84,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.messaginghub</groupId>
+                <artifactId>pooled-jms</artifactId>
+                <version>${pooled-jms.version}</version>
+                <scope>compile</scope>
+            </dependency>
 
             <dependency>
                 <groupId>com.ljp</groupId>
@@ -83,9 +99,41 @@
             </dependency>
 
             <dependency>
-                <groupId>org.messaginghub</groupId>
-                <artifactId>pooled-jms</artifactId>
-                <version>${pooled-jms.version}</version>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>${shardingsphere.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elastic.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
@@ -164,6 +212,18 @@
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons-pool2.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
             <scope>compile</scope>
@@ -173,6 +233,12 @@
             <artifactId>commons-text</artifactId>
             <version>${commons-text.version}</version>
             <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
@@ -190,6 +256,11 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>1.4.13</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -210,6 +281,11 @@
                     <configuration>
                         <encoding>UTF-8</encoding>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.3.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
