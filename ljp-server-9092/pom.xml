@@ -51,6 +51,11 @@
             <groupId>com.ljp</groupId>
             <artifactId>ljp-common</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+        </dependency>
         <!--Others-->
     </dependencies>
 

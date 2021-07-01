@@ -1,5 +1,9 @@
 package com.ljp.test.cache;
 
+import org.junit.jupiter.api.Test;
+
+import java.io.*;
+
 public class ClassCacheTest {
 
 	public static void main(String[] args) {
@@ -24,6 +28,25 @@ public class ClassCacheTest {
 		String str_3 = str_1.intern();
 		String str_2 = "11";
 		System.out.println(str_1 == str_2);// true
+	}
+
+	@Test
+	public void testOne() throws IOException {
+		var bufferedReader = new BufferedReader(new FileReader("C:\\Users\\jpluo\\Desktop\\新建文本文档 (6).txt"));
+		var bufferedWriter = new BufferedWriter(new FileWriter("C:\\Users\\jpluo\\Desktop\\新建文本文档 (66).txt"));
+		bufferedReader.lines().forEach(s -> {
+			try {
+				System.out.println(s);
+				bufferedWriter.write(s);
+				bufferedWriter.newLine();
+				bufferedWriter.flush();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		});
+		try (bufferedReader; bufferedWriter) {
+			System.out.println("this is closed ...");
+		}
 	}
 
 }
