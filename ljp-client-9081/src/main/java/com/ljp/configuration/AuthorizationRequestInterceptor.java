@@ -9,9 +9,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 @Component
-public class CommonRequestInterceptor implements RequestInterceptor {
+public class AuthorizationRequestInterceptor implements RequestInterceptor {
 
 	private static final String COOKIE = "Cookie";
+	private static final String AUTHORIZATION = "Authorization";
 
 	@Override
 	public void apply(RequestTemplate template) {
@@ -19,6 +20,7 @@ public class CommonRequestInterceptor implements RequestInterceptor {
 		if (requestAttributes != null) {
 			HttpServletRequest request = requestAttributes.getRequest();
 			template.header(COOKIE, request.getHeader(COOKIE));
+			template.header(AUTHORIZATION, request.getHeader(AUTHORIZATION));
 		}
 	}
 
