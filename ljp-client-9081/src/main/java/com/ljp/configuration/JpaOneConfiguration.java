@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -34,7 +33,7 @@ public class JpaOneConfiguration {
 
 	@Primary
 	@Bean("jpaTransactionManagerOne")
-	PlatformTransactionManager jpaTransactionManagerOne(LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBeanOne) {
+	JpaTransactionManager jpaTransactionManagerOne(LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBeanOne) {
 		EntityManagerFactory entityManagerFactory = localContainerEntityManagerFactoryBeanOne.getObject();
 		Objects.requireNonNull(entityManagerFactory, "EntityManagerFactory entityManagerFactory is null : localContainerEntityManagerFactoryBeanOne");
 		return new JpaTransactionManager(entityManagerFactory);
