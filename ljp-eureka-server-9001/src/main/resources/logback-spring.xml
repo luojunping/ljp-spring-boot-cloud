@@ -4,9 +4,13 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{MM-dd HH:mm:ss.SSS} %-5level [%t] %logger{50} %L - %msg%n%ex{full, EX_DISPLAY_EVAL}</pattern>
+            <pattern>%d{MM-dd HH:mm:ss.SSS} %-5level [%t] %logger{50} %L - %msg%n%ex{full, EX_DISPLAY_EVAL}
+            </pattern>
         </encoder>
     </appender>
+
+    <logger name="com" level="ERROR"/>
+    <logger name="org" level="ERROR"/>
 
     <root level="ERROR">
         <appender-ref ref="STDOUT"/>

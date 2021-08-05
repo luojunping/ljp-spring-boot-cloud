@@ -11,13 +11,16 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${logging.file.path}/${spring.application.name}/%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxHistory>180</maxHistory>
-            <maxFileSize>100mb</maxFileSize>
+            <maxFileSize>30mb</maxFileSize>
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
         </rollingPolicy>
         <encoder>
-            <pattern>%d{MM-dd HH:mm:ss.SSS} %-5p %t %logger{50} %L - %m%n%xEx{full, EX_DISPLAY_EVAL}</pattern>
+            <pattern>%d{HH:mm:ss.SSS} %-5p %t %logger{50} %L - %m%n%xEx{full, EX_DISPLAY_EVAL}</pattern>
         </encoder>
     </appender>
+
+    <logger name="com" level="ERROR"/>
+    <logger name="org" level="ERROR"/>
 
     <root level="ERROR">
         <appender-ref ref="STDOUT"/>

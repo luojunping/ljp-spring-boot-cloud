@@ -35,7 +35,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <!--<spring-boot.version>2.5.2</spring-boot.version>-->
+        <!--<spring-boot.version>2.5.3</spring-boot.version>-->
         <!--<spring-cloud.version>2020.0.3</spring-cloud.version>-->
         <!--<spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
@@ -47,7 +47,7 @@
         <shardingsphere.version>4.1.1</shardingsphere.version>
         <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
         <elastic.version>7.13.2</elastic.version>
-        <jedis.version>3.6.1</jedis.version>
+        <jedis.version>3.6.3</jedis.version>
         <java-jwt.version>3.17.0</java-jwt.version>
         <fastjson.version>1.2.76</fastjson.version>
         <poi.version>4.1.2</poi.version>
@@ -57,8 +57,10 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-text.version>1.9</commons-text.version>
         <commons-codec.version>1.15</commons-codec.version>
-        <curator.version>5.1.0</curator.version>
+        <curator.version>5.2.0</curator.version>
         <zookeeper.version>3.7.0</zookeeper.version>
+        <zxing.version>3.4.1</zxing.version>
+        <apollo.version>1.8.0</apollo.version>
     </properties>
 
     <dependencyManagement>
@@ -188,6 +190,24 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>jakarta.mail</artifactId>
+                <version>2.0.1</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${zxing.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo.version}</version>
+                <scope>compile</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -247,21 +267,13 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.sun.mail</groupId>
-            <artifactId>jakarta.mail</artifactId>
-            <version>2.0.1</version>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>javax.mail-api</artifactId>
-            <version>1.6.2</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.zxing</groupId>
-            <artifactId>javase</artifactId>
-            <version>3.4.1</version>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr353</artifactId>
             <scope>compile</scope>
         </dependency>
     </dependencies>

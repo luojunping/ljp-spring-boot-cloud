@@ -1,4 +1,4 @@
-package com.ljp.test.config;
+package com.ljp.test.configuration;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
@@ -12,7 +12,7 @@ import javax.jms.Destination;
 
 @ConditionalOnProperty(prefix = "spring.activemq", name = "enabled", havingValue = "true", matchIfMissing = true)
 @Configuration(proxyBeanMethods = false)
-public class ActivemqConfiguration {
+public class DestinationConfiguration {
 
 	@Bean
 	@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)

@@ -1,0 +1,30 @@
+server:
+  port: 9009
+
+spring:
+  application:
+    name: ljp-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ljp-server
+          uri: lb://ljp-server
+          predicates:
+            - name: Path
+              args:
+                patterns: /ljp-server/**
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:9999
+      eager: true
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://ljp-eureka-server-9001.com:9001/eureka/,http://ljp-eureka-server-9002.com:9002/eureka/,http://ljp-eureka-server-9003.com:9003/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    appname: ${spring.application.name}
+    prefer-ip-address: true
+

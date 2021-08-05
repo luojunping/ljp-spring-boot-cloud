@@ -113,8 +113,7 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-rocketmq</artifactId>
-            <scope>compile</scope>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
         </dependency>
         <!--Spring Cloud Alibaba-->
     </dependencies>
