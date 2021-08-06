@@ -2,7 +2,6 @@ package com.ljp.test.controller;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.ljp.test.service.TestTestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,19 +18,16 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class TestTestController {
 
-	@Value("${server.port}")
+	@Value("${server.port:9092}")
 	private String serverPort;
+	@Value("${time.spent:100}")
+	private String timeSpent;
 
-	@Autowired
-	private TestTestService testTestService;
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
 
 	@GetMapping("/test/test/helloWorld")
 	public String helloWorld() {
-		// UserDTO userDTO = testTestService.helloWorld();
-		// stringRedisTemplate.opsForValue().setIfAbsent("helloWorld", "helloWorld", 20,
-		// TimeUnit.SECONDS);
 		stringRedisTemplate.opsForValue().setIfAbsent("helloWorld", "1", 20, TimeUnit.SECONDS);
 		stringRedisTemplate.opsForHash().put("user", "name", "zhangsan");
 		stringRedisTemplate.opsForHash().put("user", "age", "18");
@@ -54,10 +50,12 @@ public class TestTestController {
 		return serverPort + " : " + token;
 	}
 
-	@GetMapping("/test/testTest")
-	public String testTest() {
-		log.error("TestTestController.testTest() : {}", serverPort);
-		return "TestTestController.testTest() : " + serverPort;
+	@GetMapping("/test/test/apollo")
+	public String apollo() {
+		log.info("serverPort: {}, timeSpent: {} !!!", serverPort, timeSpent);
+		System.out.println("--------------------------------------------------");
+		log.error("serverPort: {}, timeSpent: {} !!!", serverPort, timeSpent);
+		return String.format("From apollo serverPort: %s, timeSpent: %s !!!", serverPort, timeSpent);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.ljp.test;
+package com.ljp.test.apollo;
 
 import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.ConfigService;
