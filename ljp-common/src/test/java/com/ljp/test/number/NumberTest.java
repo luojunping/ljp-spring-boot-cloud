@@ -25,6 +25,8 @@ public class NumberTest {
 		Float e = Float.valueOf(c);
 		Float f = Float.valueOf(d);
 		System.out.println("e.equals(f) = " + e.equals(f));
+		byte aa = 2;
+		byte bb = 6;
 	}
 
 }

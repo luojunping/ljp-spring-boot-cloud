@@ -6,6 +6,9 @@
         </encoder>
     </appender>
 
+    <logger name="com" level="ERROR"/>
+    <logger name="org" level="ERROR"/>
+
     <root level="error">
         <appender-ref ref="STDOUT"/>
     </root>

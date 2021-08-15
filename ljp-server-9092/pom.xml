@@ -28,7 +28,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
+        </dependency>
         <!--Spring Boot-->
+
         <!--Spring Cloud-->
         <!-- 服务提供者，eureka客户端需要使用 -->
         <dependency>
@@ -46,6 +51,15 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>-->
         <!--Spring Cloud-->
+
+        <!--Spring Cloud Alibaba-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!--Spring Cloud Alibaba-->
+
         <!--Others-->
         <dependency>
             <groupId>com.ljp</groupId>
@@ -53,9 +67,17 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+        </dependency>
+        <!--<dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
-        </dependency>
+        </dependency>-->
         <!--Others-->
     </dependencies>
 
@@ -67,6 +89,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.ljp.Server9092Application</mainClass>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
                 </configuration>
             </plugin>
             <plugin>
@@ -78,6 +101,24 @@
                 <artifactId>maven-resources-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/webapp</directory>
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <include>**/**</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 </project>

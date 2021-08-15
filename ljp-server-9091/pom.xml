@@ -32,11 +32,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
         <!--Spring Boot-->
+
         <!--Spring Cloud-->
         <!-- 服务提供者，eureka客户端需要使用 -->
         <dependency>
@@ -71,6 +68,15 @@
             <artifactId>spring-cloud-starter-zookeeper</artifactId>
         </dependency>-->
         <!--Spring Cloud-->
+
+        <!--Spring Cloud Alibaba-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <!--Spring Cloud Alibaba-->
+
         <!--Others-->
         <dependency>
             <groupId>com.ljp</groupId>
@@ -91,10 +97,6 @@
         <dependency>
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
         </dependency>
         <!--Others-->
     </dependencies>
