@@ -16,6 +16,7 @@
 
     <dependencies>
         <!--spring boot-->
+        <!--Spring Boot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -33,12 +34,13 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <!--spring boot-->
+        <!--Spring Boot-->
 
         <!--spring cloud alibaba-->
         <!--Spring Cloud Alibaba-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -51,11 +53,11 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
@@ -73,10 +75,21 @@
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-rocketmq</artifactId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
             <scope>compile</scope>
         </dependency>
         <!--Spring Cloud Alibaba-->
+
+        <!--Others-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--Others-->
     </dependencies>
 
     <build>
