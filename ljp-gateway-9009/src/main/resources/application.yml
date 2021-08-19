@@ -17,6 +17,12 @@ spring:
       transport:
         dashboard: 127.0.0.1:9999
       eager: true
+      datasource:
+        ds1:
+          apollo:
+            namespaceName: hahaha
+            ruleType: haha
+            flowRulesKey: haha
 
 eureka:
   client:
