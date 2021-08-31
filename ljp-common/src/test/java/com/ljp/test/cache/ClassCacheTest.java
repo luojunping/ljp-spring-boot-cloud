@@ -3,6 +3,7 @@ package com.ljp.test.cache;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ClassCacheTest {
 
@@ -47,6 +48,12 @@ public class ClassCacheTest {
 		try (bufferedReader; bufferedWriter) {
 			System.out.println("this is closed ...");
 		}
+	}
+
+	@Test
+	public void testTwo() throws IOException {
+		String ss = "国";
+		System.out.println(ss.getBytes(StandardCharsets.UTF_8).length);
 	}
 
 }
