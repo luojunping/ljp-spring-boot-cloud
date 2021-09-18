@@ -64,6 +64,10 @@
             <groupId>com.ljp</groupId>
             <artifactId>ljp-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-dbdialog</artifactId>
+        </dependency>
         <!--others-->
     </dependencies>
 

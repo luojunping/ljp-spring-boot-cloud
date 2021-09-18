@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.stream.Stream;
 
 public class ClassCacheTest {
 
@@ -54,6 +55,7 @@ public class ClassCacheTest {
 	public void testTwo() throws IOException {
 		String ss = "国";
 		System.out.println(ss.getBytes(StandardCharsets.UTF_8).length);
+		Stream.iterate(0, i -> i < 10, i -> i + 2).forEach(System.out::println);
 	}
 
 }

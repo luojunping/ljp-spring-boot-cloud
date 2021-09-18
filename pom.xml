@@ -41,8 +41,8 @@
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
-        <pooled-jms.version>2.0.0</pooled-jms.version>
-        <mybatis-plus.version>3.4.3.2</mybatis-plus.version>
+        <pooled-jms.version>2.0.1</pooled-jms.version>
+        <mybatis-plus.version>3.4.3.3</mybatis-plus.version>
         <druid.version>1.2.6</druid.version>
         <shardingsphere.version>4.1.1</shardingsphere.version>
         <dubbo.version>2.7.13</dubbo.version>
@@ -62,7 +62,7 @@
         <curator.version>5.2.0</curator.version>
         <zookeeper.version>3.7.0</zookeeper.version>
         <zxing.version>3.4.1</zxing.version>
-        <apollo.version>1.8.0</apollo.version>
+        <apollo.version>1.9.1</apollo.version>
         <junit-jupiter-api.version>5.7.2</junit-jupiter-api.version>
     </properties>
 
@@ -229,6 +229,11 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-jupiter-api.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>pentaho-kettle</groupId>
+                <artifactId>kettle-dbdialog</artifactId>
+                <version>9.3.0.0-166</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

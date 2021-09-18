@@ -62,6 +62,15 @@
             <artifactId>spring-cloud-starter-zookeeper</artifactId>
         </dependency>-->
         <!--Spring Cloud-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!--Spring Cloud Alibaba-->
         <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>

@@ -24,9 +24,7 @@ public class JmsTransactionManagerAutoConfiguration {
 
 		@Bean("jmsTransactionManager")
 		@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-		// @ConditionalOnSingleCandidate(ConnectionFactory.class)
 		public JmsTransactionManager jmsTransactionManager(ConnectionFactory connectionFactory) {
-			System.out.println("JmsTransactionManager is initialization ........................");
 			return new JmsTransactionManager(connectionFactory);
 		}
 
