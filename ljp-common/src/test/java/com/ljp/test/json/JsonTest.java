@@ -1,6 +1,7 @@
 package com.ljp.test.json;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
@@ -23,6 +24,7 @@ public class JsonTest {
 	 * {"one":[{"id":1,"name":"one"},{"id":2,"name":"two"}],"two":[{"id":1,"name":"one"},{"id":2,"name":"two"}]}
 	 * fastjson
 	 * {"one":[{"id":1,"name":"one"},{"id":2,"name":"two"}],"two":[{"$ref":"$.one[0]"},{"$ref":"$.one[1]"}]}
+	 * {"one":[{"id":1,"name":"one"},{"id":2,"name":"two"}],"two":[{"id":1,"name":"one"},{"id":2,"name":"two"}]}
 	 * <p>
 	 * 结论：fastjson序列化list对象中包含相同元素，会出现序列化问题
 	 *
@@ -51,6 +53,7 @@ public class JsonTest {
 		System.out.println(objectMapper.writeValueAsString(linkedHashMap));
 		System.out.println("fastjson");
 		System.out.println(JSONObject.toJSONString(linkedHashMap));
+		System.out.println(JSONObject.toJSONString(linkedHashMap, SerializerFeature.DisableCircularReferenceDetect));
 	}
 
 }
