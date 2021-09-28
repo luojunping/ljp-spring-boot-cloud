@@ -44,6 +44,7 @@
         <pooled-jms.version>2.0.2</pooled-jms.version>
         <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
         <druid.version>1.2.6</druid.version>
+        <redisson.version>3.16.3</redisson.version>
         <shardingsphere.version>4.1.1</shardingsphere.version>
         <dubbo.version>2.7.13</dubbo.version>
         <logstash-logback-encoder.version>6.6</logstash-logback-encoder.version>
@@ -52,7 +53,7 @@
         <java-jwt.version>3.18.2</java-jwt.version>
         <fastjson.version>1.2.78</fastjson.version>
         <poi.version>4.1.2</poi.version>
-        <guava.version>30.1.1-jre</guava.version>
+        <guava.version>31.0-jre</guava.version>
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
@@ -63,8 +64,8 @@
         <zookeeper.version>3.7.0</zookeeper.version>
         <zxing.version>3.4.1</zxing.version>
         <apollo.version>1.9.1</apollo.version>
-        <junit-jupiter-api.version>5.8.0</junit-jupiter-api.version>
-        <kettle.version>9.3.0.0-166</kettle.version>
+        <junit-jupiter-api.version>5.8.1</junit-jupiter-api.version>
+        <kettle.version>9.3.0.0-200</kettle.version>
     </properties>
 
     <dependencyManagement>
@@ -113,10 +114,14 @@
                 <version>${druid.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.shardingsphere</groupId>
                 <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
                 <version>${shardingsphere.version}</version>
-                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>

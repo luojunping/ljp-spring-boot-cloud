@@ -33,31 +33,31 @@
         </dependency>
         <!--spring boot-->
         <!--Spring Cloud-->
-        <!-- 服务提供者，eureka客户端需要使用 -->
+        <!--Spring Cloud-->
+        <!--spring cloud alibaba-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- 服务提供者，nacos客户端需要使用 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- 断路器，服务调用者需要使用该组件，来保证其他服务降级时的处理逻辑 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
         <!-- Feign远程调用，需要调用服务接口可以使用 -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <!-- 断路器，服务调用者需要使用该组件，来保证其他服务降级时的处理逻辑 -->
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-        </dependency>-->
-        <!--Spring Cloud-->
-        <!--spring cloud alibaba-->
-        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-        </dependency>-->
+        </dependency>
         <!--spring cloud alibaba-->
         <!--others-->
         <dependency>

@@ -17,7 +17,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
 
-public class KafkaTest {
+public class KafkaProducerTest {
 
 	private static final String KAFKA_TEST_TOPIC = "kafka_test_topic";
 
@@ -28,14 +28,15 @@ public class KafkaTest {
 		kafkaConfigMap.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
 		kafkaConfigMap.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		kafkaConfigMap.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		kafkaConfigMap.put(ProducerConfig.RETRIES_CONFIG, 2);
 		KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(kafkaConfigMap);
-		for (int i = 0; i < 1000000; i++) {
+		for (int i = 0; i < 3; i++) {
 			kafkaProducer.send(new ProducerRecord<>(KAFKA_TEST_TOPIC, "test", "test" + decimalFormat.format(i)), (metadata, exception) -> {
-//				if (exception != null) {
-//					exception.printStackTrace();
-//				} else {
-//					System.out.println(metadata.toString());
-//				}
+				if (exception != null) {
+					System.out.println("exception: " + exception.getLocalizedMessage());
+				} else {
+					System.out.println("metadata: " + metadata.toString());
+				}
 			});
 		}
 		kafkaProducer.close();
@@ -54,9 +55,7 @@ public class KafkaTest {
 		KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(kafkaConfigMap);
 		kafkaConsumer.subscribe(List.of(KAFKA_TEST_TOPIC));
 		ConsumerRecords<String, String> consumerRecords = kafkaConsumer.poll(Duration.ofSeconds(6));
-		consumerRecords.forEach(consumerRecord -> {
-			System.out.println(consumerRecord.offset());
-		});
+		consumerRecords.forEach(consumerRecord -> System.out.println(consumerRecord.offset()));
 		kafkaConsumer.seek(new TopicPartition(KAFKA_TEST_TOPIC, 0), 1002);
 		kafkaConsumer.close();
 		long e = System.currentTimeMillis();
