@@ -1,22 +1,29 @@
 package com.ljp.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.ljp.security.UserDTO;
 import com.ljp.security.UserVO;
 
-public abstract class JsonUtils {
+/**
+ * json工具类
+ */
+public final class JsonUtils {
 
-	private static final ObjectMapper OM = new ObjectMapper();
+	private static final JsonMapper JM = new JsonMapper();
 
 	static {
 
 	}
 
+	private JsonUtils() throws IllegalAccessException {
+		throw new IllegalAccessException("JsonUtils can not be created !!!");
+	}
+
 	public static <T> T parseObject(String content, Class<T> clazz) {
 		T t = null;
 		try {
-			t = OM.readValue(content, clazz);
+			t = JM.readValue(content, clazz);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
@@ -26,7 +33,7 @@ public abstract class JsonUtils {
 	public static String toJSONString(Object object) {
 		String content = null;
 		try {
-			content = OM.writeValueAsString(object);
+			content = JM.writeValueAsString(object);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
@@ -40,6 +47,7 @@ public abstract class JsonUtils {
 		System.out.println("ss = " + ss);
 		UserVO userVO = JsonUtils.parseObject(ss, UserVO.class);
 		System.out.println("userVO = " + userVO);
+
 	}
 
 }

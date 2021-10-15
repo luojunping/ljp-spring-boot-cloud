@@ -35,21 +35,26 @@
         <!--Spring Cloud-->
         <!--Spring Cloud-->
         <!--spring cloud alibaba-->
-        <dependency>
+        <!-- 配置中心，nacos客户端需要使用 -->
+        <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-        <!-- 服务提供者，nacos客户端需要使用 -->
+        &lt;!&ndash; 服务提供者，nacos客户端需要使用 &ndash;&gt;
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!-- 断路器，服务调用者需要使用该组件，来保证其他服务降级时的处理逻辑 -->
+        &lt;!&ndash; 断路器，服务调用者需要使用该组件，来保证其他服务降级时的处理逻辑 &ndash;&gt;
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-        <!-- Feign远程调用，需要调用服务接口可以使用 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        &lt;!&ndash; dubbo远程调用，需要调用服务接口可以使用 &ndash;&gt;
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-dubbo</artifactId>
@@ -57,17 +62,17 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
-        </dependency>
+        </dependency>-->
         <!--spring cloud alibaba-->
         <!--others-->
         <dependency>
             <groupId>com.ljp</groupId>
             <artifactId>ljp-common</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-dbdialog</artifactId>
-        </dependency>
+        </dependency>-->
         <!--others-->
     </dependencies>
 
@@ -78,6 +83,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <finalName>ljp-quartz-9006</finalName>
                     <mainClass>com.ljp.Quartz9006Application</mainClass>
                 </configuration>
             </plugin>

@@ -28,12 +28,10 @@ public class JavaParameters {
 		Object object = new Object();
 		new Thread(() -> {
 			System.out.println("one");
-			synchronized (object) {
-				try {
-					object.wait();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+			try {
+				object.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
 			System.out.println("three");
 		}, "t1").start();
@@ -49,9 +47,7 @@ public class JavaParameters {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			synchronized (object) {
-				object.notifyAll();
-			}
+			object.notifyAll();
 		}, "t2").start();
 		try {
 			TimeUnit.SECONDS.sleep(5);

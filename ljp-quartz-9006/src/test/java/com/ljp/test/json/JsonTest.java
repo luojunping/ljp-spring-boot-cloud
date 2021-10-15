@@ -6,12 +6,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -44,10 +40,10 @@ public class JsonTest {
 		linkedHashMap.put("one", oneList);
 		linkedHashMap.put("two", twoList);
 		System.out.println("gson");
-		Gson gson = new GsonBuilder().create();
-		Type type = new TypeToken<LinkedHashMap<String, Object>>() {
-		}.getType();
-		System.out.println(gson.toJson(linkedHashMap, type));
+//		Gson gson = new GsonBuilder().create();
+//		Type type = new TypeToken<LinkedHashMap<String, Object>>() {
+//		}.getType();
+//		System.out.println(gson.toJson(linkedHashMap, type));
 		System.out.println("jackson");
 		ObjectMapper objectMapper = new ObjectMapper();
 		System.out.println(objectMapper.writeValueAsString(linkedHashMap));
