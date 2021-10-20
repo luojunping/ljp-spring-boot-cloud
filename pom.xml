@@ -66,6 +66,7 @@
         <apollo.version>1.9.1</apollo.version>
         <junit-jupiter-api.version>5.8.1</junit-jupiter-api.version>
         <ttl.version>2.12.2</ttl.version>
+        <flyway.version>8.0.1</flyway.version>
     </properties>
 
     <dependencyManagement>
@@ -122,6 +123,11 @@
                 <groupId>org.apache.shardingsphere</groupId>
                 <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
                 <version>${shardingsphere.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>${flyway.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
