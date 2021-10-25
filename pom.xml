@@ -35,8 +35,8 @@
 
     <properties>
         <java.version>11</java.version>
-        <!--<spring-boot.version>2.5.4</spring-boot.version>-->
-        <!--<spring-cloud.version>2020.0.3</spring-cloud.version>-->
+        <!--<spring-boot.version>2.5.6</spring-boot.version>-->
+        <!--<spring-cloud.version>2020.0.4</spring-cloud.version>-->
         <!--<spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
@@ -66,7 +66,7 @@
         <apollo.version>1.9.1</apollo.version>
         <junit-jupiter-api.version>5.8.1</junit-jupiter-api.version>
         <ttl.version>2.12.2</ttl.version>
-        <flyway.version>8.0.1</flyway.version>
+        <flyway.version>8.0.2</flyway.version>
     </properties>
 
     <dependencyManagement>
