@@ -13,8 +13,9 @@
 
     <artifactId>ljp-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ljp-demo</name>
-    <description>ljp-demo</description>
+    <name>ljp-spring-boot</name>
+    <description>ljp-spring-boot</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -53,10 +54,15 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-x-discovery</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>ljp-demo</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
