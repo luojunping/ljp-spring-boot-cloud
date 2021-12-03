@@ -40,7 +40,7 @@
         <!--<spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
         <pooled-jms.version>2.0.2</pooled-jms.version>
         <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
         <druid.version>1.2.8</druid.version>
@@ -61,7 +61,6 @@
         <commons-codec.version>1.15</commons-codec.version>
         <commons-io.version>2.11.0</commons-io.version>
         <curator.version>5.2.0</curator.version>
-        <zookeeper.version>3.7.0</zookeeper.version>
         <zxing.version>3.4.1</zxing.version>
         <apollo.version>1.9.1</apollo.version>
         <junit-jupiter-api.version>5.8.2</junit-jupiter-api.version>
