@@ -2,6 +2,6 @@ package com.ljp.test.service;
 
 public interface SimpleTestService {
 
-	void testTransaction();
+	void testTransaction(String param);
 
 }
