@@ -44,7 +44,7 @@
         <pooled-jms.version>2.0.2</pooled-jms.version>
         <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
         <druid.version>1.2.8</druid.version>
-        <redisson.version>3.16.6</redisson.version>
+        <redisson.version>3.16.7</redisson.version>
         <shardingsphere.version>5.0.0</shardingsphere.version>
         <dubbo.version>3.0.4</dubbo.version>
         <logstash-logback-encoder.version>7.0.1</logstash-logback-encoder.version>
