@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -18,6 +19,7 @@ public class UserDTO {
 	private String userEmail;
 	private String nickname;
 	private String loginPassword;
+	private LocalDateTime loginTime;
 	private Date createTime;
 	private Date updateTime;
 
