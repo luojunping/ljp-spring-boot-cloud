@@ -14,6 +14,8 @@
 
     <artifactId>ljp-eureka-server-9002</artifactId>
     <packaging>jar</packaging>
+    <name>ljp-eureka-server-9002</name>
+    <description>ljp-eureka-server-9002</description>
 
     <dependencies>
         <!--Spring Boot-->
@@ -36,14 +38,22 @@
     </dependencies>
 
     <build>
-        <finalName>ljp-eureka-server-9002</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <finalName>${project.artifactId}</finalName>
                     <mainClass>com.ljp.EurekaServer9002Application</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

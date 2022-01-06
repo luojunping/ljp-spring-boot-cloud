@@ -35,7 +35,7 @@
     </modules>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>1.8</java.version>
         <!--<spring-boot.version>2.4.13</spring-boot.version>-->
         <!--<spring-cloud.version>2020.0.5</spring-cloud.version>-->
         <!--<spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>-->
@@ -294,10 +294,10 @@
                     <configuration>
                         <skip>true</skip>
                         <encoding>UTF-8</encoding>
-                        <source>8</source>
-                        <target>8</target>
+                        <source>1.8</source>
+                        <target>1.8</target>
                         <fork>true</fork>
-                        <compilerVersion>8</compilerVersion>
+                        <compilerVersion>1.8</compilerVersion>
                     </configuration>
                 </plugin>
                 <plugin>

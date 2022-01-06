@@ -11,7 +11,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ljp-demo</artifactId>
+    <artifactId>ljp-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ljp-spring-boot</name>
     <description>ljp-spring-boot</description>
@@ -34,6 +34,10 @@
         </dependency>
 
         <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
@@ -55,6 +59,10 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-x-discovery</artifactId>
         </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -64,7 +72,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <finalName>ljp-demo</finalName>
+                    <finalName>${project.artifactId}</finalName>
                     <mainClass>com.ljp.Demo9009Application</mainClass>
                 </configuration>
             </plugin>

@@ -15,10 +15,6 @@
     <artifactId>ljp-client-9081</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
     <dependencies>
         <!--Spring Boot-->
         <dependency>
@@ -98,7 +94,7 @@
                     <mainClass>com.ljp.ClientOneApplication</mainClass>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <executions>
@@ -117,7 +113,7 @@
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

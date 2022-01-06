@@ -14,10 +14,6 @@
     <artifactId>ljp-server-9092</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
     <dependencies>
         <!--Spring Boot-->
         <dependency>
