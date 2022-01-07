@@ -13,6 +13,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ljp-gateway-9009</artifactId>
+    <packaging>jar</packaging>
+    <name>ljp-gateway-9009</name>
+    <description>ljp-gateway-9009</description>
 
     <dependencies>
         <dependency>
@@ -48,14 +51,22 @@
     </dependencies>
 
     <build>
-        <finalName>ljp-gateway-9009</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <finalName>${project.artifactId}</finalName>
                     <mainClass>com.ljp.Gateway9009Application</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

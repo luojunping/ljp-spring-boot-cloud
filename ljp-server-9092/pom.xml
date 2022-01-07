@@ -13,6 +13,8 @@
 
     <artifactId>ljp-server-9092</artifactId>
     <packaging>jar</packaging>
+    <name>ljp-server-9092</name>
+    <description>ljp-server-9092</description>
 
     <dependencies>
         <!--Spring Boot-->
@@ -68,15 +70,23 @@
     </dependencies>
 
     <build>
-        <finalName>ljp-server-9092</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <finalName>${project.artifactId}</finalName>
                     <mainClass>com.ljp.Server9092Application</mainClass>
                     <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

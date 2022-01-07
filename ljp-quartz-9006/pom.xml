@@ -13,6 +13,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ljp-quartz-9006</artifactId>
+    <packaging>jar</packaging>
+    <name>ljp-quartz-9006</name>
+    <description>ljp-quartz-9006</description>
 
     <dependencies>
         <!--spring boot-->
@@ -77,15 +80,22 @@
     </dependencies>
 
     <build>
-        <finalName>ljp-quartz-9006</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <finalName>ljp-quartz-9006</finalName>
+                    <finalName>${project.artifactId}</finalName>
                     <mainClass>com.ljp.Quartz9006Application</mainClass>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
